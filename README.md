@@ -7,8 +7,7 @@ An example of an AMQP implementation client using rabbitMQ as server. A producer
 Change the url adress in both consumer and producer files with yours (url token).
 3. Make sure that the python version (last version) is completely installed in your environnement.
 4. Run consumer by running the follow commandin terminal:
-
-  python consumer.py (Linux/Mac) ;  python .\consumer.py (Win 10)
+   python consumer.py (Linux/Mac) ;  python .\consumer.py (Win 10).
+   
 5. Run producer by running the follow command in terminal:
-
    python producer.py (Linux/Mac) ;  python .\producer.py (Win 10)
