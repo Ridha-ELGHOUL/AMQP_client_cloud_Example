@@ -8,16 +8,7 @@ k =0
 #connection = pika.BlockingConnection(params)
 connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
 channel= connection.channel()
-mqtthost = "localhost"  
-mqttuser = "guest"  
-mqttpass = "guest"  
-mqtttopic = "data"  
 
-def on_connect(client, userdata, flags, rc):
-    print("CONNACK received with code %d." % (rc))
-def on_publish(client, userdata, mid):
-    print("mid: "+str(mid))
- 
 client = paho.Client()
 client.on_connect = on_connect
 client.on_publish = on_publish
@@ -32,5 +23,4 @@ while (1):
     randN = gauss(1,500)
     #print ((randN))
     channel.basic_publish(exchange='',routing_key='Data',body=str(randN)+'  Ref: '+str(k))
-    (rc, mid) = client.publish(mqtttopic, str(randN), qos=1)
     time.sleep(0.5)
